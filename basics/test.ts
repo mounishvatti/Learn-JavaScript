@@ -1,4 +1,4 @@
-const user = {
+const userDetails = {
   name: "Daniel",
   age: 26,
 };
