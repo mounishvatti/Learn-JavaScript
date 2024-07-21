@@ -61,3 +61,11 @@ const myObject = {
 for(const key in myObject) {
     console.log(key, ':', myObject[key]);
 }
+
+
+const coding = ["CPP", "JavaScript", "Java", "Python"]
+
+// coding.forEach( (item) => {
+//     console.log(item);
+// });
+
