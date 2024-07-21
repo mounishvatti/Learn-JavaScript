@@ -69,3 +69,26 @@ const coding = ["CPP", "JavaScript", "Java", "Python"]
 //     console.log(item);
 // });
 
+const myCoding = [
+    {
+        name: 'C++',
+        language: 'cpp'
+    },
+    {
+        name: 'JavaScript',
+        language: 'js'
+    },
+    {
+        name: 'Java',
+        language: 'java'
+    },
+    {
+        name: 'Python',
+        language: 'python'
+    }
+]
+
+myCoding.forEach( (item) => {
+    console.log(item.language);
+});
+
