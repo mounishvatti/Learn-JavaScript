@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | Part 2</title>
+    <style>
+        .bg-black {
+            background-color: rgb(26, 26, 26);
+            color: rgb(211, 211, 211);
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div class="container">
+        <div class="day">
+            <h1>Monday</h1>
+        </div>
+        <div class="day">
+            <h1>Tuesday</h1>
+        </div>
+        <div class="day">
+            <h1>Wednesday</h1>
+        </div>
+        <div class="day">
+            <h1>Thursday</h1>
+        </div>
+        <div class="day">
+            <h1>Friday</h1>
+        </div>
+        <div class="day">
+            <h1>Saturday</h1>
+        </div>
+        <div class="day">
+            <h1>Sunday</h1>
+        </div>
+    </div>
+</body>
+<script>
+    const day = document.querySelector('.day');
+    day.style.color = 'orange';
+
+    const cont = document.querySelector('.container');
+
+    console.log(cont.children);
+
+    const child = cont.children;
+
+    console.log(child);
+
+    for(let i = 0; i < cont.children.length; i++) {
+        child[i].style.color = 'skyblue';
+        i++;
+    }
+
+</script>
+
+</html>

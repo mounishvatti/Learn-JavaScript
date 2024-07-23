@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Part 3</title>
+    <style>
+        .bg-black {
+            background-color: rgb(26, 26, 26);
+            color: rgb(211, 211, 211);
+        }
+    </style>
+</head>
+<body class="bg-black">
+    
+</body>
+    <script>
+        const div = document.createElement('div')
+        console.log(div);
+        div.className = "main"
+        div.setAttribute('title', 'generated title')
+        div.style.backgroundColor = 'green'
+        div.style.padding = '10px'
+        div.style.borderRadius = '10px'
+        const addText = document.createTextNode('This is a div created by JavaScript')
+        div.appendChild(addText) // adding the text to the div
+        document.body.appendChild(div) // attaching the div to the body
+    </script>
+</html>

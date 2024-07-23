@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Part 4</title>
+</head>
+<body style="background-color: rgb(22, 22, 22); color: rgb(166, 163, 163);">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerText = langName
+        //li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    // too much traversal in case of large number of elements
+
+    addLanguage('Python')
+    addLanguage('Java')
+    addLanguage('C++')
+
+    function addLanguageOptimised(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguageOptimised('GoLang')
+    
+    // Edit
+    function editLanguage(langName, index) {
+        const li = document.querySelector('.language').children[index]
+        li.innerText = langName
+        //li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    // editLanguage('Rust', 0)
+
+    // optimised approach
+    function editLanguageOptimised(langName, index) {
+        const oldlang = document.querySelector('.language').children[index]
+        const newLang = document.createElement('li')
+        newLang.textContent = langName
+        oldlang.replaceWith(newLang)
+    }
+
+    // removeLanguage
+
+    function removeLanguage(index) {
+        const li = document.querySelector('.language').children[index]
+        li.remove()
+    }
+
+    
+
+    editLanguageOptimised('Mojo', 1)
+</script>
+</html>
