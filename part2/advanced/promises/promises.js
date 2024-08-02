@@ -97,3 +97,18 @@ fetch("https://jsonplaceholder.typicode.com/users")
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.log("ERROR:",error))
+
+
+// expanded version of the same code as above
+
+fetch("https://api.github.com/users/mounishvatti")
+    .then( (response) => {
+        return response.json()
+    })
+    .then( (data) => { // chained promises (collects data from the previous return statement)
+        console.log(data)
+    })
+    .catch( (error) => {
+        console.log("ERROR:",error)
+    })
+    
