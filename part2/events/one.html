@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body style="background-color: rgb(42, 42, 42)">
+    <h2 style="color: rgb(255, 255, 255)">Image Gallery</h2>
+    <div>
+      <ul>
+        <li>
+          <img
+            width="200px"
+            id="cliff"
+            src="https://www.w3schools.com/css/img_5terre.jpg"
+            alt="cliff"
+            width="200"
+            height="150"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="forest"
+            src="https://www.w3schools.com/css/img_forest.jpg"
+            alt="forest"
+            width="200"
+            height="150"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="fjords"
+            src="https://www.w3schools.com/css/img_fjords.jpg"
+            alt="fjords"
+            width="200"
+            height="150"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="mountain"
+            src="https://www.w3schools.com/css/img_mountains.jpg"
+            alt="mountain"
+            width="200"
+            height="150"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="lights"
+            src="https://www.w3schools.com/css/img_lights.jpg"
+            alt="light"
+            width="200"
+            height="150"
+          />
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // document.getElementById("forest").onclick = function(){
+    //     alert("You clicked on the forest");
+    // };
+
+    document.getElementById("cliff").addEventListener(
+      "click",
+      function (e) {
+        console.log(e);
+      },
+      false
+    );
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, metaKey
+  </script>
+</html>
