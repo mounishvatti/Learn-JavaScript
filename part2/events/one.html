@@ -9,7 +9,7 @@
   <body style="background-color: rgb(42, 42, 42)">
     <h2 style="color: rgb(255, 255, 255)">Image Gallery</h2>
     <div>
-      <ul>
+      <ul id="images">
         <li>
           <img
             width="200px"
@@ -60,6 +60,14 @@
             height="150"
           />
         </li>
+        <li>
+          <a
+            style="color: rgb(255, 255, 255)"
+            id="google"
+            href="https://www.google.com"
+            >Google</a
+          >
+        </li>
       </ul>
     </div>
   </body>
@@ -68,13 +76,46 @@
     //     alert("You clicked on the forest");
     // };
 
-    document.getElementById("cliff").addEventListener(
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("You clicked inside the ul");
+    //   },
+    //   false
+    // );
+
+    // // both of these will execute since they are both click events and present in the same element
+
+    // document.getElementById("cliff").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("You clicked on the cliff");
+    //     e.stopPropagation(); // prevents the event from bubbling up to the parent element
+    //   },
+    //   false
+    // );
+
+    document.getElementById("google").addEventListener(
       "click",
       function (e) {
-        console.log(e);
+        console.log("You clicked on the google link");
+        e.stopPropagation(); // prevents the event from bubbling up to the parent element
+        e.preventDefault(); // prevents the default action of the link
       },
       false
     );
+
+    document.querySelector("#images").addEventListener(
+      "click",
+      function (e) {
+        if (e.target.tagName === "IMG") { // only execute if the target is an image
+          let removeItem = e.target.parentNode;
+          removeItem.remove(); // removes the image from the DOM (the entire li element) that is why we use parentNode
+        }
+      },
+      false
+    );
+
     // type, timestamp, defaultPrevented
     // target, toElement, srcElement, currentTarget
     // clientX, clientY, screenX, screenY
