@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Request</title>
+    <style>
+      .container {
+        border: #c5c5c5 dotted 1px;
+        padding: 10px;
+        border-radius: 5px;
+        color: rgb(215, 196, 171);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-color: #212121;
+      color: #e1e1e1;
+      font-family: Arial, Helvetica, sans-serif;
+    "
+  >
+    <h1 style="color: coral; text-align: center">API Request</h1>
+
+    <p style="text-align: center">
+      <strong>XMLHttpRequest</strong> is a powerful API that allows you to make
+      HTTP requests from JavaScript. It is commonly used to fetch data from a
+      server, but it can also be used to send data to a server.
+    </p>
+
+    <h2 style="color: rgb(156, 80, 255); text-align: center">GitHubAPI</h2>
+
+    <p style="text-align: center">
+        This example uses the GitHub API to fetch user
+        details.<br/>You can replace the username with any other GitHub username
+        you want to fetch data for.
+    </p>
+
+    <div class="container">
+      <h2 style="color: rgb(210, 201, 30)">User Details</h2>
+      <img class="avatar"
+        width="200"
+      />
+      <p class="username"></p>
+      <p class="fullname"></p>
+      <p class="following"></p>
+      <p class="followers"></p>
+    </div>
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/mounishvatti";
+    const xhr = new XMLHttpRequest(); // create a new XMLHttpRequest object
+    xhr.open("GET", requestUrl); // open the request
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        const data = JSON.parse(this.responseText);
+        console.log(data);
+        console.log("username:", data.login);
+        console.log("Full Name:", data.name);
+        console.log("Following:", data.following);
+        console.log("Followers:", data.followers);
+
+        document.querySelector(".avatar").src = data.avatar_url;
+
+        document.querySelector(
+          ".username"
+        ).innerHTML = `<strong>Username:</strong> ${data.login}`;
+        document.querySelector(
+          ".fullname"
+        ).innerHTML = `<strong>Full Name:</strong> ${data.name}`;
+        document.querySelector(
+          ".following"
+        ).innerHTML = `<strong>Following:</strong> ${data.following}`;
+        document.querySelector(
+          ".followers"
+        ).innerHTML = `<strong>Followers:</strong> ${data.followers}`;
+      }
+    };
+    xhr.send();
+  </script>
+</html>
