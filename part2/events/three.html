@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    let i = 0;
+    const start = document.querySelector("#start");
+    const stop = document.querySelector("#stop");
+    let intervalId;
+
+    const printNum = function (val) {
+      val = val + 1;
+      console.log(val, Date.now());
+      i = val; // Update i so that it continues counting
+    };
+
+    start.addEventListener("click", function () {
+      console.log("STARTED");
+      if (!intervalId) {
+        // Check if interval is already running
+        intervalId = setInterval(printNum, 1000, i);
+      }
+    });
+
+    stop.addEventListener("click", function () {
+      clearInterval(intervalId);
+      intervalId = null; // Reset the intervalId
+    });
+  </script>
+</html>

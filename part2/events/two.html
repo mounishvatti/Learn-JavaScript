@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Set Timeout & Set Interval</h1>
+    <h2>Welcome to 100xDevs</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // const h1 = document.querySelector('h1');
+    // setTimeout(() => {
+    //     h1.textContent = 'Hello World';
+    // }, 1000);
+
+    // const start = document.querySelector('#start');
+    const stop = document.querySelector('#stop').addEventListener('click', function(){
+        //console.log('Stop');
+        clearTimeout(timeout);
+        console.log('STOPPED');
+    });
+
+    // start.addEventListener('click', function(){
+    //     console.log('Start');
+    //     setTimeout(function(){
+    //         console.log('Hello World');
+    //     }, 2000);
+    // });
+
+    // stop.addEventListener('click', function(){
+    //     console.log('Stop');
+    //     clearTimeout(timeout);
+    // });
+
+    const changeText = function(){
+        document.querySelector('h2').innerHTML = 'Start your development journey with 100xDevs';
+    }
+
+    const timeout = setInterval(changeText, 3000);
+
+    // setInterval(function(){
+    //     console.log('Set Interval for 2 seconds');
+    // }, 2000);
+
+    //clearTimeout(timeout);
+
+</script>
+</html>
