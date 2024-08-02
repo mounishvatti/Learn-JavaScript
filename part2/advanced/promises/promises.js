@@ -112,3 +112,11 @@ fetch("https://api.github.com/users/mounishvatti")
         console.log("ERROR:",error)
     })
     
+
+// Why fetch is processed at the earliest even though it is async?
+
+//Ans: all the fetch calls are sent to the call-back queue (priority queue) hence the order of execution makes sure that the fetch is processed first.
+
+
+
+

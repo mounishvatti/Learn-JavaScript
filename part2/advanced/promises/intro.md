@@ -22,3 +22,10 @@ promise.then((result) => {
   console.error(error);
 });
 ```
+Why fetch is processed at the earliest even though it is async?
+---------------
+
+**Ans:** All the fetch calls are sent to the call-back queue (priority queue) hence the order of execution makes sure that the fetch is processed first.
+
+
+![Internal Architecture why fetch is processed first](image.png)
