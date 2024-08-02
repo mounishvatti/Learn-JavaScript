@@ -91,7 +91,7 @@ async function getAllUsers() {
 
 getAllUsers()
 
-// same as above
+// same as above without async/await
 
 fetch("https://jsonplaceholder.typicode.com/users")
     .then(response => response.json())
