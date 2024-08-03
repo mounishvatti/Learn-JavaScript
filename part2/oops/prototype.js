@@ -66,6 +66,10 @@ class TAsupport extends TeachingStaff {
     }
 }
 
+User.prototype.displayName = function() { // addind a method to an existing class object
+    return `Hi your name is: ${this.name}`;
+}
+
 const user1 = new User("Mounish", 25);
 const teachingStaff1 = new TeachingStaff(true, 5);
 const tas1 = new TAsupport("JS assignment", true);
@@ -76,6 +80,8 @@ console.log(tas1.makeAssignment); // Output: JS assignment
 console.log(tas1.fullTime); // Output: true
 console.log(tas1.isAvailable); // Output: true
 console.log(tas1.teachingExperience); // Output: 5
+
+console.log(user1.displayName()); // Output: Hi your name is:Mounish
 
 
 // setPrototypeOf
