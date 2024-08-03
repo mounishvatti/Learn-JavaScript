@@ -1,3 +1,5 @@
+// what does call do?
+
 function setUsername(username) {
     this.username = username;
 }
@@ -9,7 +11,7 @@ function setUsername(username) {
 // }
 
 function User(username, email, password) {
-    setUsername.call(this, username);
+    setUsername.call(this, username); // call is used here to set username to the current context
     this.email = email;
     this.password = password;
 }
