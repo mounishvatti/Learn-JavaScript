@@ -70,6 +70,10 @@ User.prototype.displayName = function() { // addind a method to an existing clas
     return `Hi your name is: ${this.name}`;
 }
 
+User.prototype.displayAge = () => { // you can create this way as well (arrow functions)
+    return `Your age is: ${this.age}`;
+}
+
 const user1 = new User("Mounish", 25);
 const teachingStaff1 = new TeachingStaff(true, 5);
 const tas1 = new TAsupport("JS assignment", true);
