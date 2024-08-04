@@ -60,3 +60,15 @@ user.location; // returns undefined
 const addTwo = (num1, num2) => (num1 + num2)
  
 console.log(addTwo(3,4));
+
+const isEven = (a) => {
+    if (typeof a == "number") {
+        if (a % 2 == 0) {
+            console.log(`${a} is even`);
+        } else {
+            console.log(`${a} is not even`);
+        }
+    } else {
+        console.log("Given parameter is not a number");
+    }
+}
