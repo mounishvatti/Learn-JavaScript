@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button>Button</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = 'React'
+            this.server = 'https://reactjs.org'
+
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleSubmit.bind(this)) // if you don't use bind it won't be able to access the current context.
+        }
+
+        handleSubmit(){
+            console.log("Button clicked")
+            console.log(this.server)
+        }
+    }
+    const app = new React()
+</script>
+</html>
