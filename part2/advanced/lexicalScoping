@@ -1,0 +1,30 @@
+// lexical scoping
+
+function foo() {
+  var x = 1;
+  function bar() {
+    var x = 2;
+    console.log(x);
+  }
+  bar();
+}
+
+foo();
+
+
+// what is lexical scoping?
+
+function outerFunction() {
+    const outerVariable = 'I am from outer scope';
+
+    function innerFunction() {
+        const innerVariable = 'I am from inner scope';
+        console.log(outerVariable); // Accessing variable from outer scope
+        console.log(innerVariable); // Accessing variable from inner scope
+    }
+
+    innerFunction();
+    // console.log(innerVariable); // Uncaught ReferenceError: innerVariable is not defined
+}
+
+outerFunction();
