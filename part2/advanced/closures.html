@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures in JavaScript</title>
+</head>
+<body>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+    <button id="blue">blue</button>
+    <button id="red">red</button>
+    <button id="yellow">yellow</button>
+</body>
+<script>
+    const colors = ["orange", "green", "blue", "red", "yellow"];
+
+    function clickHandler(color) {
+        //document.body.style.backgroundColor = `color`; won't work
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+
+    // document.getElementById("orange").addEventListener("click", clickHandler("orange"));
+    // document.getElementById("green").addEventListener("click", clickHandler("green"));
+    // document.getElementById("blue").addEventListener("click", clickHandler("blue"));
+    // document.getElementById("red").addEventListener("click", clickHandler("red"));
+    // document.getElementById("yellow").addEventListener("click", clickHandler("yellow"));
+
+    // or 
+
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+    document.getElementById("blue").onclick = clickHandler("blue");
+    document.getElementById("red").onclick = clickHandler("red");
+    document.getElementById("yellow").onclick = clickHandler("yellow");
+
+</script>
+</html>

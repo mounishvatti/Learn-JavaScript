@@ -5,7 +5,14 @@ function outerScope() {
     function innerScope() {
         console.log(variable);
     }
-    innerScope();
+    return innerScope;
 }
-outerScope();
+const myfunc = outerScope();
+myfunc();
+
+// practical example
+
+const myArray = [1, 2, 3, 4, 5];
+
+
 
