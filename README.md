@@ -6,3 +6,4 @@ Part 2: [`JavaScript Part 2 - Chai aur Code`](https://youtu.be/_TjtAyMkiTI?si=jg
 
 Documentation: [`MDN Web Docs`](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
+![alt text](image.png)
