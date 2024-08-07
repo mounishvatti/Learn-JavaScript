@@ -29,6 +29,7 @@ const promiseThree = new Promise(function (resolve, reject) {
 });
 
 promiseThree.then(function (user) {
+  console.log("console log inside promise three");
   console.log(user);
 });
 
@@ -45,6 +46,7 @@ const promiseFour = new Promise(function (resolve, reject) {
 
 promiseFour
   .then((user) => {
+    console.log("console log inside promise four");
     console.log(user);
     return user.username;
   })
@@ -109,6 +111,7 @@ fetch("https://api.github.com/users/mounishvatti")
   .then((data) => {
     // chained promises (collects data from the previous return statement)
     console.log(data);
+    console.log("------------------- console log inside fetch completed -----------------");
   })
   .catch((error) => {
     console.log("ERROR:", error);
