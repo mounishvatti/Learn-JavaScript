@@ -1,0 +1,22 @@
+li{
+    list-style: none;
+}
+
+button{
+    padding: 5px;
+    margin: 2px;
+    border: none;
+    border-radius: 6px;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.editbtn{
+    background-color: green;
+    color: white;
+}
+
+.delbtn{
+    background-color: red;
+    color: white;
+}
